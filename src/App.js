@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import AddGro from './components/AddGro';
+import SearchGro from './components/SearchGro';
+import DeleteGro from './components/DeleteGro';
+import View from './components/View';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+    <BrowserRouter>
+    <Routes>
+
+<Route path="/" element= { <AddGro/>} />
+<Route path="/search" element= { <SearchGro/>} />
+<Route path="/delete" element= { <DeleteGro/>} />
+<Route path="/view" element= { <View/>} />
+
+    </Routes>
+    </BrowserRouter>
   );
 }
 
